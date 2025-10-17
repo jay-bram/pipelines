@@ -1,0 +1,21 @@
+name: Multi Job Workflow
+on:
+    workflow_dispatch
+jobs:
+    job-1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: T1
+              run: echo "J1-T1"
+            - name: T2
+              run: cat /etc/*release*
+            - name: T3
+              run: sleep 30
+    job-2:
+        needs: [ job-1 ]
+        runs-on: ubuntu-latest
+        steps:
+            - name: T1
+              run: |
+                echo "J2-T1"
+                cat /etc/*release*
