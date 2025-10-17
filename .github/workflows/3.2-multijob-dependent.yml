@@ -1,4 +1,4 @@
-name: Multi Job Workflow
+name: Dependent Multi Job Workflow
 on:
     workflow_dispatch
 jobs:
