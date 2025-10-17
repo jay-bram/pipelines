@@ -1,0 +1,16 @@
+name: Independent Multi Job Workflow
+on:
+    workflow_dispatch
+jobs:
+    job-1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: S1
+              run: echo "J1-S1"
+    job-2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: S1
+              run: echo "J2-S1"
+            - name: S2
+              run: echo "J2-S2"
