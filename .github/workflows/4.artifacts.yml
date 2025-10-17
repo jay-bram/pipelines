@@ -17,7 +17,7 @@ jobs:
         needs: [ upload ]
         steps:
             - name: Download the artifact
-              uses: checkout/download-artifact@v5
+              uses: actions/download-artifact@v5
               with:
                 name: text-file
             - name: List the directory
