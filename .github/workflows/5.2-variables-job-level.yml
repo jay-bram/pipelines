@@ -1,39 +1,33 @@
-name: Variables Step Level
+name: Variables Job Level
 on:
     workflow_dispatch
 jobs:
     build:
+        env:
+          CONTAINER_REGISTRY: docker.io
+          DOCKER_USERNAME: cj404
+          DOCKER_PASSWORD: docker@strong1
+          IMAGE_NAME: python-kube-app
+          TAG: v2
         runs-on: ubuntu-latest
         steps:
             - name: Docker Build
-              env:
-                CONTAINER_REGISTRY: docker.io
-                DOCKER_USERNAME: cj404
-                IMAGE_NAME: python-kube-app
-                TAG: v2
               run: echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:$TAG
 
             - name: Docker Login
-              env:
-                DOCKER_USERNAME: cj404
-                DOCKER_PASSWORD: docker@strong1
               run: echo docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
               
             - name: Docker Publish
-              env:
-                CONTAINER_REGISTRY: docker.io
-                IMAGE_NAME: python-kube-app
-                DOCKER_USERNAME: cj404
-                TAG: v2
               run: echo docker push ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.TAG }}
+
     deploy:
+        env:
+          CONTAINER_REGISTRY: docker.io
+          IMAGE_NAME: python-kube-app
+          DOCKER_USERNAME: cj404
+          TAG: v2
         runs-on: ubuntu-latest
         needs: [ build ]
         steps:
             - name: Docker Run
-              env:
-                CONTAINER_REGISTRY: docker.io
-                IMAGE_NAME: python-kube-app
-                DOCKER_USERNAME: cj404
-                TAG: v2
               run: echo docker run -d -p 8080:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:$TAG
