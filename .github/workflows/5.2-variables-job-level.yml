@@ -1,6 +1,5 @@
-name: Variables Job Level
-on:
-    workflow_dispatch
+name: 5.2 - Variables Job Level
+on: [ push, workflow_dispatch ]
 jobs:
     build:
         env:

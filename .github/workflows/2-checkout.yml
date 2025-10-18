@@ -1,6 +1,5 @@
-name: Checkout Workflow
-on:
-    workflow_dispatch:
+name: 2 - Checkout Workflow
+on: [ push, workflow_dispatch ]
 jobs:
     Job-1:
         runs-on: ubuntu-latest

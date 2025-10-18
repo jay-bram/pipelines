@@ -1,6 +1,5 @@
-name: Variables Repo Level
-on:
-    workflow_dispatch
+name: 5.4 - Variables Repo Level
+on: [ push, workflow_dispatch ]
 env:
   CONTAINER_REGISTRY: docker.io
   DOCKER_PASSWORD: docker@strong1

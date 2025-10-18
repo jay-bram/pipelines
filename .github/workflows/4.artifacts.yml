@@ -1,6 +1,5 @@
-name: Artifacts Usage Workflow
-on:
-    workflow_dispatch
+name: 4 - Artifacts Usage Workflow
+on: [ push, workflow_dispatch ]
 jobs:
     upload:
         runs-on: ubuntu-latest

@@ -1,6 +1,5 @@
-name: Basic Workflow
-on:
-    workflow_dispatch:
+name: 1 - Basic Workflow
+on: [ push, workflow_dispatch ]
 jobs:
     job-1:
         runs-on: ubuntu-latest

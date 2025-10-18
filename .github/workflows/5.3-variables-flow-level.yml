@@ -1,6 +1,5 @@
-name: Variables Flow Level
-on:
-    workflow_dispatch
+name: 5.3 - Variables Flow Level
+on: [ push, workflow_dispatch ]
 env:
   CONTAINER_REGISTRY: docker.io
   DOCKER_USERNAME: cj404

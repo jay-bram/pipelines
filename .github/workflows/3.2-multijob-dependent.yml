@@ -1,6 +1,5 @@
-name: Dependent Multi Job Workflow
-on:
-    workflow_dispatch
+name: 3.2 - Dependent Multi Job Workflow
+on: [ push, workflow_dispatch ]
 jobs:
     job-1:
         runs-on: ubuntu-latest
