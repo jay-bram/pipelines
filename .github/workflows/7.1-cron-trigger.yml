@@ -1,7 +1,8 @@
 name: 7.1 - CRON Triggers Workflow
 on:
-  schedule:
-    - cron: "*/1 * * * *"
+  workflow_dispatch
+  # schedule:
+  #   - cron: "*/1 * * * *"
 env:
   CONTAINER_REGISTRY: docker.io
   DOCKER_USERNAME: cj404
