@@ -1,4 +1,4 @@
-name: Secrets Repo-Level Workflow
+name: Repo Variables Workflow
 on:
     workflow_dispatch
 env:
