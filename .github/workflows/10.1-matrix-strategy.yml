@@ -1,4 +1,4 @@
-name: Matrix Configuration
+name: 10.1 - Matrix Configuration
 on:
   workflow_dispatch
 jobs:
