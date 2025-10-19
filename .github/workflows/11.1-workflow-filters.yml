@@ -2,6 +2,8 @@ name: 11.1 - Workflow Filters
 on:
   workflow_dispatch:
   pull_request:
+    branches:
+      - main
   # push:
 jobs:
   job_1:
