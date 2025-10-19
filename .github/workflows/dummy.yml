@@ -1,6 +1,6 @@
 name: Matrix Strategy
 on:
-  push:
+#   push:
   workflow_dispatch: 
 jobs:
   deploy:
