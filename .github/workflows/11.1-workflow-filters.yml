@@ -1,7 +1,8 @@
 name: 11.1 - Workflow Filters
 on:
   workflow_dispatch:
-  push:
+  pull_request:
+  # push:
 jobs:
   job_1:
     runs-on: ubuntu-latest
