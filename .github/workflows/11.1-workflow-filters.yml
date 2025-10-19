@@ -1,0 +1,10 @@
+name: 11.1 - Workflow Filters
+on:
+  workflow_dispatch
+jobs:
+  job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "This workflow/job/step is executed for event type - ${{  github.event_name }}"    
+  
