@@ -10,7 +10,5 @@ jobs:
         image: [hello-world, alpine]
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Display Docker Info
-        run: docker info
-      - name: Run
-        run: docker run ${{ matrix.image }}
+      - name: Display Branch
+        run: echo ${{ github.ref }}
