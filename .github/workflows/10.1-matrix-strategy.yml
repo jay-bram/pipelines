@@ -16,7 +16,7 @@ jobs:
         if: ${{ matrix.os != 'windows-latest' }}
         run: cat /etc/*release*
 
-      - name: Display Linux System Details
+      - name: Display Windows System Details
         if: ${{ matrix.os == 'windows-latest' }}
         run: systeminfo
 
